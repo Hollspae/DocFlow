@@ -1,12 +1,15 @@
 <script>
-
+import ModalAuth from './Modal/ModalAuth.vue';
 
 export default {
+    components: { ModalAuth },
     data() {
+        return {
+            isModalVisible: false,
+        }
+    }
 
-    },
-
-};
+}
 </script>
 <template>
     <div class="container">
@@ -22,17 +25,21 @@ export default {
 
         </div>
         <div class="Block-two">
-            <p style="color: rgb(37 99 235);font-size: 30px; font-weight: 500;padding-bottom: 0px;">Добро пожаловать
+            <p style="color: rgb(37 99 235);font-size: 24px; font-weight: 500;padding-bottom: 0px;">Добро пожаловать
             </p>
-            <p style="color: rgb(75 85 99);font-size: 15px; ">Войдите в систему или создайте новый аккаунт</p>
-            <form action="" style="display: flex; flex-direction: column;">
-                <button id="login">Войти в систему</button>
+            <p style="color: rgb(99 102 106);font-size: 14px;">Войдите в систему или создайте новый аккаунт</p>
+            <div class="form">
+                <button @click="isModalVisible = true" id="login">Войти в систему</button>
+
                 <button id="logout">Создать аккаунт</button>
-            </form>
-            <p style="color: rgb(75 85 99); font-size: 13px;">Продолжая, вы соглашаетесь с <a href=""
-                    style="color: rgb(37 99 235); font-size: 13px;">условиями использования</a></p>
+            </div>
+            <p style="color: rgb(99 102 106); font-size: 13px;">Продолжая, вы соглашаетесь с <a href="">условиями
+                    использования</a></p>
         </div>
+
+        <ModalAuth :visible="isModalVisible" @close="isModalVisible = false" />
     </div>
+
 </template>
 
 
@@ -42,7 +49,6 @@ export default {
     margin: auto;
     display: inline-flex;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-
 }
 
 .Block-one,
@@ -71,8 +77,8 @@ export default {
 }
 
 h1 {
-
-    font-size: 30px;
+    margin-top: .5em;
+    font-size: 35px;
     font-weight: bold;
 }
 
@@ -93,27 +99,28 @@ ul li {
     text-align: left;
     list-style-type: none;
     font-size: 15px;
-    padding-top: .5em;
+    padding-top: .6em;
 }
 
-form {
+.form {
     padding: 0px;
+    display: flex;
+    flex-direction: column;
 }
 
-form>button {
+.form>button {
     width: 100%;
     height: 50px;
     border-radius: 10px;
-    margin-bottom: 1em;
+    margin: .5em 0;
     cursor: pointer;
     transition: all ease-in .1s;
+    font-weight: 600;
+    font-size: 16px;
 }
 
 #login {
     background-color: rgb(37 99 235);
-    font-size: 16px;
-    font-weight: 800;
-
 }
 
 #login:hover {
@@ -123,12 +130,22 @@ form>button {
 #logout {
     border: 2px solid rgb(37 99 235);
     color: rgb(37 99 235);
-    font-size: 16px;
-    font-weight: 800;
 }
 
 #logout:hover {
     background-color: rgb(37 99 235);
     color: rgb(255, 255, 255);
+}
+
+a {
+    color: rgb(37 99 235);
+    font-size: 13px;
+    text-decoration: none;
+
+}
+
+a:hover {
+    text-decoration: underline;
+
 }
 </style>

@@ -14,11 +14,27 @@
     margin: 0;
     padding: 0;
 }
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+input[type="text"] {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    margin: 0;
+}
 h1,
 p,
-span,li, button, a {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
+span,
+li,
+button,
+a,
+label {
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
     color: #fff;
 }
 body {
