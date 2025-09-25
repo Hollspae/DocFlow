@@ -37,26 +37,4 @@ export default {
 </script>
 
 <style scoped>
-.create-btn,
-.delete-btn {
-    margin-left: 10px;
-    padding: 5px 10px;
-    border: none;
-    cursor: pointer;
-}
-
-.delete-btn {
-    background-color: red;
-    color: white;
-}
-
-.create-btn {
-    display: block;
-    margin-top: 20px;
-    background-color: green;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    padding: 8px 12px;
-}
 </style>
