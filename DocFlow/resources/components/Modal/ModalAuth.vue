@@ -1,7 +1,5 @@
 <script>
-import BaseButton from '../Button/BaseButton.vue';
 export default {
-    components: { BaseButton },
     name: 'ModalAuth',
     props: {
         visible: {
@@ -36,11 +34,8 @@ export default {
                 <input id="password" type="password" min="8" placeholder="">
             </div>
 
-            <BaseButton variant="primary" :disabled="isLoading" @click="isModalVisible = true">
-                Войти
-            </BaseButton>
 
-            <!-- <button class="modal-enter">Войти</button> -->
+            <button class="modal-enter">Войти</button>
         </div>
     </div>
 
@@ -56,7 +51,6 @@ export default {
     bottom: 0;
     background: rgba(0, 0, 0, 0.8);
     display: flex;
-    text-align: center;
     align-items: center;
     justify-content: center;
     z-index: 1000;
@@ -70,8 +64,8 @@ export default {
     min-width: 460px;
     height: auto;
     display: flex;
-
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
     position: relative;
 
@@ -101,6 +95,7 @@ export default {
     width: 100%;
     display: flex;
     flex-direction: column;
+
     background-color: #fff;
     color: #c9c9c9;
 }
@@ -112,7 +107,8 @@ label {
     font-weight: bold;
     text-align: left;
     color: black;
-margin: .2em 0;
+
+    margin: .5em 0;
 }
 
 input {
@@ -127,16 +123,34 @@ input {
     color: #212529;
     background-color: #fff;
     background-clip: padding-box;
-    margin-bottom: 1em ;
-
+    margin: .5em 0;
 }
 
-input::placeholdefr {
+input::placeholder {
     color: #c9c9c9;
 }
 
 input:focus {
     border: .15em solid #000;
     outline: 0;
+}
+
+.modal-enter {
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    margin: .5em 0;
+    cursor: pointer;
+    transition: all ease-in .1s;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.modal-enter {
+    background-color: rgb(37 99 235);
+}
+
+.modal-enter:hover {
+    background-color: rgb(73, 122, 228);
 }
 </style>
