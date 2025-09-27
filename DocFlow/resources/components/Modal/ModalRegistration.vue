@@ -1,8 +1,6 @@
 <script>
-import BaseButton from '../Button/BaseButton.vue';
 export default {
-    components: { BaseButton },
-    name: 'ModalAuth',
+    name: 'ModalRegistration',
     props: {
         visible: {
             type: Boolean,
@@ -25,7 +23,7 @@ export default {
         <div class="modal-content">
             <button @click="close" class="modal-close">✕</button>
 
-            <h1 class="modal-tile">Вход в систему</h1>
+            <h1 class="modal-tile">Регистрация</h1>
 
             <div class="modal-input">
                 <label for="email">Email</label>
@@ -35,12 +33,17 @@ export default {
                 <label for="password">Пароль</label>
                 <input id="password" type="password" min="8" placeholder="">
             </div>
+            <div class="modal-input">
+                <label for="FIO">ФИО</label>
+                <input id="passFIOword" type="text"  placeholder="Иванов Иван Иванович">
+            </div>
+            <div class="modal-input">
+                <label for="Company">Компания</label>
+                <input id="Company" type="text"  placeholder="Наименование">
+            </div>
 
-            <BaseButton variant="primary" :disabled="isLoading" @click="isModalVisible = true">
-                Войти
-            </BaseButton>
 
-            <!-- <button class="modal-enter">Войти</button> -->
+            <button class="modal-enter">Войти</button>
         </div>
     </div>
 
@@ -56,7 +59,6 @@ export default {
     bottom: 0;
     background: rgba(0, 0, 0, 0.8);
     display: flex;
-    text-align: center;
     align-items: center;
     justify-content: center;
     z-index: 1000;
@@ -70,8 +72,8 @@ export default {
     min-width: 460px;
     height: auto;
     display: flex;
-
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
     position: relative;
 
@@ -101,6 +103,7 @@ export default {
     width: 100%;
     display: flex;
     flex-direction: column;
+
     background-color: #fff;
     color: #c9c9c9;
 }
@@ -112,7 +115,8 @@ label {
     font-weight: bold;
     text-align: left;
     color: black;
-margin: .2em 0;
+
+    margin: .5em 0;
 }
 
 input {
@@ -127,16 +131,34 @@ input {
     color: #212529;
     background-color: #fff;
     background-clip: padding-box;
-    margin-bottom: 1em ;
-
+    margin: .5em 0;
 }
 
-input::placeholdefr {
+input::placeholder {
     color: #c9c9c9;
 }
 
 input:focus {
     border: .15em solid #000;
     outline: 0;
+}
+
+.modal-enter {
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    margin: .5em 0;
+    cursor: pointer;
+    transition: all ease-in .1s;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.modal-enter {
+    background-color: rgb(37 99 235);
+}
+
+.modal-enter:hover {
+    background-color: rgb(73, 122, 228);
 }
 </style>

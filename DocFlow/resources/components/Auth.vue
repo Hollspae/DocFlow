@@ -1,8 +1,11 @@
 <script>
 import ModalAuth from './Modal/ModalAuth.vue';
+import ModalRegistration from './Modal/ModalRegistration.vue'
+import BaseButton from './Button/BaseButton.vue';
+
 
 export default {
-    components: { ModalAuth },
+    components: { ModalAuth, ModalRegistration, BaseButton },
     data() {
         return {
             isModalVisible: false,
@@ -29,9 +32,17 @@ export default {
             </p>
             <p style="color: rgb(99 102 106);font-size: 14px;">Войдите в систему или создайте новый аккаунт</p>
             <div class="form">
-                <button @click="isModalVisible = true" id="login">Войти в систему</button>
 
-                <button id="logout">Создать аккаунт</button>
+                <BaseButton variant="primary" :disabled="isLoading" @click="isModalVisible = true">
+                    <i class="fas fa-user"></i>
+                    Войти в систему
+                </BaseButton>
+                
+                <BaseButton variant="secondary" :disabled="isLoading" @click="isModalVisible = true">
+                    <i class="fas fa-user"></i>
+                    Зарегистрироваться
+                </BaseButton>
+
             </div>
             <p style="color: rgb(99 102 106); font-size: 13px;">Продолжая, вы соглашаетесь с <a href="">условиями
                     использования</a></p>
