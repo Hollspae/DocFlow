@@ -5,10 +5,11 @@ import BaseButton from './Button/BaseButton.vue';
 
 
 export default {
-    components: { ModalAuth, ModalRegistration, BaseButton },
+    components: { ModalRegistration, BaseButton, ModalAuth },
     data() {
         return {
             isModalVisible: false,
+            isModalRegVisible: false
         }
     }
 
@@ -18,6 +19,10 @@ export default {
     <div class="container">
         <div class="Block-one">
             <img class="logo" src="../image/Logo.svg" alt="">
+
+
+
+
             <h1>DocFlow </h1>
             <p>Современная система электронного документооборота для вашего бизнеса</p>
             <ul>
@@ -37,18 +42,23 @@ export default {
                     <i class="fas fa-user"></i>
                     Войти в систему
                 </BaseButton>
-                
-                <BaseButton variant="secondary" :disabled="isLoading" @click="isModalVisible = true">
+
+                <router-link to="/user-panel" style="color:black">Панель пользователя</router-link>
+
+                <BaseButton variant="secondary" :disabled="isLoading" @click="isModalRegVisible = true">
                     <i class="fas fa-user"></i>
                     Зарегистрироваться
                 </BaseButton>
 
             </div>
+
             <p style="color: rgb(99 102 106); font-size: 13px;">Продолжая, вы соглашаетесь с <a href="">условиями
                     использования</a></p>
         </div>
 
         <ModalAuth :visible="isModalVisible" @close="isModalVisible = false" />
+
+        <ModalRegistration :visible="isModalRegVisible" @close="isModalRegVisible = false" />
     </div>
 
 </template>

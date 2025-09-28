@@ -11,7 +11,9 @@
 </head>
 
 <body>
-    <div id="app"></div>
+    <div id="app">
+        <home-page></home-page>
+    </div>
 
     <script type="module" src="{{ Vite::asset('resources/js/app.js') }}"></script>
 </body>

@@ -1,5 +1,6 @@
 <script>
 import BaseButton from '../Button/BaseButton.vue';
+
 export default {
     components: { BaseButton },
     name: 'ModalAuth',
@@ -15,6 +16,12 @@ export default {
         },
         handleOverlayClick() {
             this.close();
+        },
+        goToUserPanel() {
+            isModalVisible = true;
+            console.log('Переход на user-panel') // Добавляем лог
+            this.$router.push('/user-panel')
+
         }
     }
 }
@@ -36,11 +43,17 @@ export default {
                 <input id="password" type="password" min="8" placeholder="">
             </div>
 
-            <BaseButton variant="primary" :disabled="isLoading" @click="isModalVisible = true">
+
+
+
+            <BaseButton variant="primary" :disabled="isLoading" @click="goToUserPanel">
                 Войти
             </BaseButton>
 
-            <!-- <button class="modal-enter">Войти</button> -->
+
+
+
+
         </div>
     </div>
 
@@ -112,7 +125,7 @@ label {
     font-weight: bold;
     text-align: left;
     color: black;
-margin: .2em 0;
+    margin: .2em 0;
 }
 
 input {
@@ -127,7 +140,7 @@ input {
     color: #212529;
     background-color: #fff;
     background-clip: padding-box;
-    margin-bottom: 1em ;
+    margin-bottom: 1em;
 
 }
 
