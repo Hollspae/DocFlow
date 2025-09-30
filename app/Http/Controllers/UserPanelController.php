@@ -11,4 +11,19 @@ class UserPanelController extends Controller
         return view('user-panel');
 
     }
+    public function incoming()
+    {
+        return view('user-panel');
+
+    }
+     public function outgoing()
+    {
+        return view('user-panel');
+
+    }
+     public function setting()
+    {
+        return view('user-panel');
+
+    }
 }

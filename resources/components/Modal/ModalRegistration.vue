@@ -1,5 +1,8 @@
 <script>
+import BaseButton from '../Button/BaseButton.vue';
+
 export default {
+    components: { BaseButton },
     name: 'ModalRegistration',
     props: {
         visible: {
@@ -35,15 +38,18 @@ export default {
             </div>
             <div class="modal-input">
                 <label for="FIO">ФИО</label>
-                <input id="passFIOword" type="text"  placeholder="Иванов Иван Иванович">
+                <input id="passFIOword" type="text" placeholder="Иванов Иван Иванович">
             </div>
             <div class="modal-input">
                 <label for="Company">Компания</label>
-                <input id="Company" type="text"  placeholder="Наименование">
+                <input id="Company" type="text" placeholder="Наименование">
             </div>
 
-
-            <button class="modal-enter">Войти</button>
+            <router-link to="/user-panel">
+                <BaseButton variant="primary" :disabled="isLoading">
+                    Войти
+                </BaseButton>
+            </router-link>
         </div>
     </div>
 

@@ -10,7 +10,7 @@ export default {
     props: {
         type: {
             type: String,
-            default: 'button' // button, submit, reset
+            default: 'button'
         },
         disabled: {
             type: Boolean,
@@ -18,9 +18,11 @@ export default {
         },
         variant: {
             type: String,
-            default: 'primary' // primary, secondary, danger, navigation
+            default: 'primary',
+            validator: function (value) {
+                return ['primary', 'secondary', 'danger', 'navigation', 'navigation-active'].includes(value);
+            }
         },
-
     },
     computed: {
         computedClass() {
@@ -29,13 +31,12 @@ export default {
                 `btn--${this.variant}`,
                 { 'btn--disabled': this.disabled },
             ]
-        },
-
-        methods: {
-            onClick(event) {
-                if (this.disabled) return;
-                this.$emit('click', event);
-            }
+        }
+    },
+    methods: {
+        onClick(event) {
+            if (this.disabled) return;
+            this.$emit('click', event);
         }
     }
 }
@@ -48,7 +49,10 @@ export default {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-
+    width: 100%;
+    /* Добавьте это для навигационных кнопок */
+    text-align: left;
+    /* Добавьте это для навигационных кнопок */
 }
 
 
@@ -87,35 +91,32 @@ export default {
 
 }
 
-/* NAVIGATION MAIN */
+/* NAVIGATION ACTIVE - ИСПРАВЛЕНО! */
 .btn--navigation-active {
     background: var(--color-blue);
-    border: none;
     color: var(--color-white);
-    text-align: left;
     font-weight: bold;
     letter-spacing: .5px;
     box-shadow: var(--box-shadow);
 }
 
-.btn--navigation-active :hover {
+/* УБРАТЬ ПРОБЕЛ! */
+.btn--navigation-active:hover {
     background-color: rgb(73, 122, 228);
-
 }
 
+/* NAVIGATION */
 .btn--navigation {
     background: var(--color-white);
     border: none;
-    color: var(--color-black);
+    color: var(--color-grey);
     text-align: left;
     font-weight: bold;
     letter-spacing: .5px;
-
 }
 
 .btn--navigation:hover {
     background: var(--color-gray-light);
-
 }
 
 

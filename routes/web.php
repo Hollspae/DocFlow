@@ -6,10 +6,16 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/user-panel', [UserPanelController::class, 'index'])->name('user-panel');
+
+Route::prefix('user-panel')->group(function () {
+    Route::get('/', [UserPanelController::class, 'index'])->name('user-panel');
+    Route::get('/incoming', [UserPanelController::class, 'incoming'])->name('incoming');
+    Route::get('/outgoing', [UserPanelController::class, 'outgoing'])->name('outgoing');
+    Route::get('/setting', [UserPanelController::class, 'setting'])->name('setting');
+    Route::get('/{any}', [UserPanelController::class, 'index'])->where('any', '.*');
+});
 
 
 
-// Route::get('/{any}', function () {
-//     return view('welcome');
-// })->where('any', '.*');
+
+

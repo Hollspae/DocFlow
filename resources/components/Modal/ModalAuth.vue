@@ -17,12 +17,7 @@ export default {
         handleOverlayClick() {
             this.close();
         },
-        goToUserPanel() {
-            isModalVisible = true;
-            console.log('Переход на user-panel') // Добавляем лог
-            this.$router.push('/user-panel')
 
-        }
     }
 }
 </script>
@@ -43,17 +38,11 @@ export default {
                 <input id="password" type="password" min="8" placeholder="">
             </div>
 
-            <router-link to="/user-panel" style="color:black">
-                <BaseButton variant="primary" :disabled="isLoading" @click="goToUserPanel">
+            <router-link to="/user-panel">
+                <BaseButton variant="primary" :disabled="isLoading">
                     Войти
                 </BaseButton>
             </router-link>
-
-
-
-
-
-
 
 
         </div>
