@@ -18,7 +18,7 @@ export default {
         },
         variant: {
             type: String,
-            default: 'primary' // primary, secondary, danger
+            default: 'primary' // primary, secondary, danger, navigation
         },
 
     },
@@ -48,43 +48,91 @@ export default {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+
 }
 
+
+/* PRIMARY */
 .btn--primary {
-    background: rgb(37 99 235);
-    color: #fff;
-}
-
-.btn--secondary {
-    background: #fff;
-    border: 2px solid rgb(37 99 235);
-    color: rgb(37 99 235);
-}
-
-.btn--danger {
-    background: #e53935;
-    color: #fff;
-}
-
-.btn--disabled,
-.btn:disabled {
-    background: #e0e0e0 !important;
-    color: #bdbdbd !important;
-    cursor: not-allowed;
+    background: var(--color-blue);
+    color: var(--color-white);
 }
 
 .btn--primary:hover {
     background-color: rgb(73, 122, 228);
 }
 
+
+/* SECONDARY */
+.btn--secondary {
+    background: var(--color-white);
+    border: 2px solid var(--color-blue);
+    color: var(--color-blue);
+}
+
 .btn--secondary:hover {
-    background-color: rgb(37 99 235);
+    background-color: var(--color-blue);
     color: rgb(255, 255, 255);
 }
 
+
+/* DANGER */
+.btn--danger {
+    background: #e53935;
+    color: var(--color-white);
+}
+
+.btn--danger:hover {
+    background: #c95957;
+
+}
+
+/* NAVIGATION MAIN */
+.btn--navigation-active {
+    background: var(--color-blue);
+    border: none;
+    color: var(--color-white);
+    text-align: left;
+    font-weight: bold;
+    letter-spacing: .5px;
+    box-shadow: var(--box-shadow);
+}
+
+.btn--navigation-active :hover {
+    background-color: rgb(73, 122, 228);
+
+}
+
+.btn--navigation {
+    background: var(--color-white);
+    border: none;
+    color: var(--color-black);
+    text-align: left;
+    font-weight: bold;
+    letter-spacing: .5px;
+
+}
+
+.btn--navigation:hover {
+    background: var(--color-gray-light);
+
+}
+
+
+/* ICON */
 .btn i {
     margin-right: 8px;
     font-size: 16px;
     vertical-align: middle;
+}
+
+
+
+/* DISABLED */
+.btn--disabled,
+.btn:disabled {
+    background: #e0e0e0 !important;
+    color: #bdbdbd !important;
+    cursor: not-allowed;
 }
 </style>

@@ -43,12 +43,14 @@ export default {
                 <input id="password" type="password" min="8" placeholder="">
             </div>
 
+            <router-link to="/user-panel" style="color:black">
+                <BaseButton variant="primary" :disabled="isLoading" @click="goToUserPanel">
+                    Войти
+                </BaseButton>
+            </router-link>
 
 
 
-            <BaseButton variant="primary" :disabled="isLoading" @click="goToUserPanel">
-                Войти
-            </BaseButton>
 
 
 
@@ -103,7 +105,7 @@ export default {
 }
 
 .modal-tile {
-    color: rgb(37 99 235);
+    color: var(--color-blue);
     font-size: 22px;
     font-weight: 500;
     margin-bottom: 1em;
@@ -114,7 +116,7 @@ export default {
     width: 100%;
     display: flex;
     flex-direction: column;
-    background-color: #fff;
+    background-color: var(--color-white);
     color: #c9c9c9;
 }
 
@@ -138,7 +140,7 @@ input {
     font-weight: 400;
     line-height: 1.5;
     color: #212529;
-    background-color: #fff;
+    background-color: var(--color-white);
     background-clip: padding-box;
     margin-bottom: 1em;
 

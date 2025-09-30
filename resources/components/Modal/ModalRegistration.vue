@@ -66,7 +66,7 @@ export default {
 }
 
 .modal-content {
-    background: #fff;
+    background: var(--color-white);
     padding: 1.5rem;
     border-radius: 10px;
     min-width: 460px;
@@ -92,7 +92,7 @@ export default {
 }
 
 .modal-tile {
-    color: rgb(37 99 235);
+    color: var(--color-blue);
     font-size: 22px;
     font-weight: 500;
     margin-bottom: 1em;

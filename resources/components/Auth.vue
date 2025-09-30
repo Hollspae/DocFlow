@@ -18,10 +18,7 @@ export default {
 <template>
     <div class="container">
         <div class="Block-one">
-            <img class="logo" src="../image/Logo.svg" alt="">
-
-
-
+            <img class="logo" src="../image/Logo--circle-orange.svg" alt="">
 
             <h1>DocFlow </h1>
             <p>Современная система электронного документооборота для вашего бизнеса</p>
@@ -43,7 +40,7 @@ export default {
                     Войти в систему
                 </BaseButton>
 
-                <router-link to="/user-panel" style="color:black">Панель пользователя</router-link>
+
 
                 <BaseButton variant="secondary" :disabled="isLoading" @click="isModalRegVisible = true">
                     <i class="fas fa-user"></i>
@@ -69,24 +66,24 @@ export default {
 .container {
     margin: auto;
     display: inline-flex;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--box-shadow);
+
 }
 
 .Block-one,
 .Block-two {
     height: 420px;
     width: 450px;
-
     text-align: center;
 }
 
 .Block-one {
-    background-color: rgb(37 99 235);
+    background-color: var(--color-blue);
     padding: 3em;
 }
 
 .Block-two {
-    background-color: rgb(255, 255, 255);
+    background-color: var(--color-white);
     padding: 3em;
 
 }
@@ -141,7 +138,7 @@ ul li {
 }
 
 #login {
-    background-color: rgb(37 99 235);
+    background-color: var(--color-blue);
 }
 
 #login:hover {
@@ -149,17 +146,17 @@ ul li {
 }
 
 #logout {
-    border: 2px solid rgb(37 99 235);
+    border: 2px solid var(--color-blue);
     color: rgb(37 99 235);
 }
 
 #logout:hover {
-    background-color: rgb(37 99 235);
-    color: rgb(255, 255, 255);
+    background-color: var(--color-blue);
+    color: var(--color-white);
 }
 
 a {
-    color: rgb(37 99 235);
+    color: var(--color-blue);
     font-size: 13px;
     text-decoration: none;
 
