@@ -1,16 +1,16 @@
 <script>
 import BaseButton from '../Button/BaseButton.vue';
-import UserNavigation from './UserNavigation.vue';
+import Navigation from '../UserPanel/Navigation.vue';
 export default {
-    name: 'Incoming',
+    name: 'AdminPanel',
     data() {
         return {
             isLoading: false,
-            activeButton: 'incoming'
+            activeButton: 'admin-panel'
         }
     },
     components: {
-        BaseButton, UserNavigation
+        BaseButton, Navigation
     },
     methods: {
         setActiveButton(buttonName) {
@@ -23,10 +23,10 @@ export default {
 </script>
 <template>
 
-    <UserNavigation />
+    <Navigation />
 
     <div class="panel-content" style="width: 100%;text-align: center; ">
-        <h1 style="color: black;">Incoming</h1>
+        <h1 style="color: black;">Admin Panel</h1>
 
     </div>
 

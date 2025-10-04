@@ -1,7 +1,7 @@
 <script>
 import BaseButton from '../Button/BaseButton.vue';
 export default {
-    name: 'UserNavigation',
+    name: 'Navigation',
     data() {
         return {
             isLoading: false,
@@ -14,9 +14,16 @@ export default {
     methods: {
         setActiveButton(buttonName) {
             this.activeButton = buttonName;
+            localStorage.setItem('activeButton', buttonName);
         },
 
 
+    },
+     mounted() {
+        const savedButton = localStorage.getItem('activeButton');
+        if (savedButton) {
+            this.activeButton = savedButton;
+        }
     }
 }
 </script>
@@ -74,13 +81,13 @@ export default {
 
             </div>
 
-            <!-- <router-link to="/admin-panel" style="color:black"> -->
+            <router-link to="/admin-panel" style="color:black">
                 <BaseButton :variant="activeButton === 'admin-panel' ? 'navigation-active' : 'navigation'"
                     @click="setActiveButton('admin-panel')" class="changed-button">
                     <i class=""></i>
                     Админ панель
                 </BaseButton>
-            <!-- </router-link> -->
+            </router-link>
 
         </div>
 

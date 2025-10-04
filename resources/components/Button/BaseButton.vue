@@ -50,9 +50,7 @@ export default {
     border-radius: 5px;
     cursor: pointer;
     width: 100%;
-    /* Добавьте это для навигационных кнопок */
-    text-align: left;
-    /* Добавьте это для навигационных кнопок */
+    text-align: center;
 }
 
 
@@ -91,13 +89,14 @@ export default {
 
 }
 
-/* NAVIGATION ACTIVE - ИСПРАВЛЕНО! */
+/* NAVIGATION ACTIVE */
 .btn--navigation-active {
     background: var(--color-blue);
     color: var(--color-white);
     font-weight: bold;
     letter-spacing: .5px;
     box-shadow: var(--box-shadow);
+    text-align: left;
 }
 
 /* УБРАТЬ ПРОБЕЛ! */
@@ -109,7 +108,7 @@ export default {
 .btn--navigation {
     background: var(--color-white);
     border: none;
-    color: var(--color-grey);
+    color: var(--color-black);
     text-align: left;
     font-weight: bold;
     letter-spacing: .5px;
@@ -117,6 +116,7 @@ export default {
 
 .btn--navigation:hover {
     background: var(--color-gray-light);
+
 }
 
 

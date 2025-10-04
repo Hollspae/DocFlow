@@ -2,11 +2,11 @@
 import BaseButton from '../Button/BaseButton.vue';
 import Navigation from './Navigation.vue';
 export default {
-    name: 'UserPanel',
+    name: 'Setting',
     data() {
         return {
             isLoading: false,
-            activeButton: 'main'
+            activeButton: 'incoming'
         }
     },
     components: {
@@ -21,14 +21,12 @@ export default {
     }
 }
 </script>
-
-
 <template>
 
     <Navigation />
 
     <div class="panel-content" style="width: 100%;text-align: center; ">
-        <h1 style="color: black;">UserPanel</h1>
+        <h1 style="color: black;">Setting</h1>
 
     </div>
 
